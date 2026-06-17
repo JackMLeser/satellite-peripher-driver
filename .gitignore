@@ -1,0 +1,12 @@
+# Build output
+build/
+
+# Editor / OS cruft
+.DS_Store
+*.o
+*.a
+*.out
+
+# Python
+__pycache__/
+*.pyc
