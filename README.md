@@ -1,6 +1,6 @@
 # sat-peripheral-driver-demo
 
-A small, interview-ready C driver for a **simulated spacecraft sensor
+ready C driver for a **simulated spacecraft sensor
 peripheral**. It demonstrates the core mechanics of embedded/flight software
 talking to hardware: register-level I/O, device initialization, command writes,
 telemetry acquisition, status/fault handling, timeout/error handling, and
