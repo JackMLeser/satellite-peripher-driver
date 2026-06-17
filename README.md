@@ -209,33 +209,7 @@ Done.
     ok
 
 37 checks, 0 failure(s)
-```
-
-## 8. Interview talking points
-
-- I built this after seeing **device driver development** and **hardware/software
-  interfaces** in the Airbus role description.
-- I wanted to understand how **flight software talks to peripherals through a
-  register-level interface**.
-- The C driver is **separated from the bus backend**, which is similar to how
-  embedded drivers are separated from I2C/SPI/UART/CAN implementations.
-- The **mock backend** lets me validate normal *and* failure behavior without
-  physical hardware — the software analog of hardware-in-the-loop testing.
-- The project gave me better language for discussing **BSPs, device interfaces,
-  HIL testing, and flight software validation**.
-
-### Likely follow-up questions I can speak to
-
-- *Why poll with a bounded loop instead of `while(1)`?* Flight tasks must not
-  block forever on hardware; a timeout returns control and reports `SAT_ERR_TIMEOUT`.
-- *Why function pointers for the bus?* Portability + testability; the driver is
-  transport-agnostic and the BSP supplies the transport.
-- *Why no `malloc`?* The caller owns the handle; deterministic memory use is
-  preferred in flight software.
-- *How would you take this to real hardware?* Implement `read_reg`/`write_reg`/
-  `delay_ms` against a real peripheral and pass that `bus_interface_t` to the
-  driver — nothing in `sat_sensor.c` changes.
-
+``
 ---
 
 ## What I would add next
